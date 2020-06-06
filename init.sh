@@ -73,10 +73,4 @@ rm client-wg0.conf
 
 echo 'Configs created!'
 
-#
-# append peer to host config
-#
-
-# wg set wg0 peer $publickeyclient allowed-ips ${ADDRESS_CLIENT}
-
 echo 'Init done!'
