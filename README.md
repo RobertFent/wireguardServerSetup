@@ -20,11 +20,23 @@ docker cp <containerId>:/etc/wireguard/peers/client-wg0.conf.tar.gz client-wg0.c
 ```
 
 ## how to test
-ssh into client should work:
+1. Ip addresses
+```
+ip a show wg0
+```
+should print:
+```
+wg0: <POINTOPOINT,NOARP,UP,LOWER_UP> mtu 1420 qdisc noqueue state UNKNOWN group default qlen 1000
+link/none
+inet 10.0.0.1/24 scope global wg0
+   valid_lft forever preferred_lft forever
+```
+
+2. Ssh into client
 ```
 ssh pi@10.0.0.2
 ```
-or
+3. Ping client
 ```
 ping 10.0.0.2
 ```
