@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  wireguard:
+    image: robertfent1/wireguard-host
+    ports:
+      - "51820:51820/udp"
+    environment:
+      - SERVER_IP=136.244.85.157
+      - ADDRESS_SERVER=10.0.0.1
+      - ADDRESS_CLIENT=10.0.0.2
+    cap_add:
+      - NET_ADMIN
+    network_mode: host
+    dns: 8.8.8.8
+    restart: always 
+    container_name: wireguard-host
